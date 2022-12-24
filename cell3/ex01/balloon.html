@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <meta charset="UTF-8"/>
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	  <title>Ballon</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        background-color:skyblue;
+        height: 100vh;
+      }
+
+      .balloon {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: red;
+        margin: 0 auto;
+      }
+    </style>
+    <script>
+      function balloonGrows(element){
+        var b = document.querySelector('.balloon');
+        var width = getComputedStyle(b).getPropertyValue('width');
+        var color = getComputedStyle(b).getPropertyValue('background-color');
+        
+        if (color === 'rgb(255, 0, 0)')
+          element.style.backgroundColor = 'green';
+        else if (color === 'rgb(0, 128, 0)')
+          element.style.backgroundColor = 'blue';
+        else
+          element.style.backgroundColor = 'red';
+        
+        if ( width < '420px')
+        {
+          element.style.width = (element.offsetWidth + 10) + "px";
+          element.style.height = (element.offsetHeight + 10) + "px";
+        }
+        else
+        {
+          element.style.width = "200px";
+          element.style.height = "200px";
+        }
+      }
+
+      function balloonDecreases(element){
+        var b = document.querySelector('.balloon');
+        var width = getComputedStyle(b).getPropertyValue('width');
+        var color = getComputedStyle(b).getPropertyValue('background-color');
+        
+        if (color === 'rgb(255, 0, 0)')
+          element.style.backgroundColor = 'blue';
+        else if (color === 'rgb(0, 128, 0)')
+          element.style.backgroundColor = 'red';
+        else
+          element.style.backgroundColor = 'green';
+
+        if ( width > '200px')
+        {
+          element.style.width = (element.offsetWidth - 5) + "px";
+          element.style.height = (element.offsetHeight - 5) + "px";
+        }
+        else
+        {
+          element.style.width = "200px";
+          element.style.height = "200px";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="balloon" onclick="balloonGrows(this);" onmouseleave="balloonDecreases(this);"></div>
+  </body>
+</html>

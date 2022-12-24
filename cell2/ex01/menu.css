@@ -1,0 +1,46 @@
+html, body {
+	background-color: skyblue;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+h1 {
+  text-align: center;
+  height: 40%;
+  font-family: monospace;
+  font-size: 5vw;
+}
+
+h1 i {
+  font-family: cursive, fantasy;
+  Font-weight: thin;
+}
+
+.menu {
+  display: flex;
+  background-color: #EBA487;
+  width: 100%;
+  height: 20%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+label {
+  font-family: monospace;
+  font-size: 2vw;
+  font-weight: bolder;
+  padding: 100px;
+}
+
+select {
+  background-color: #E8AE02;
+  width: 80%;
+  height: 10%;
+  text-align: center;
+  font-family: monospace;
+  font-size: 2vw;
+  font-weight: bold;
+}
+

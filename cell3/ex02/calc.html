@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Calculator</title>
+    <script>
+      function calculate(){
+        let result;
+        let x = parseInt(document.getElementById('fnumber').value);
+        let y = parseInt(document.getElementById('snumber').value);
+        let sel = document.getElementById('sel');
+        let selection = sel.options[sel.selectedIndex].value;
+
+        if (x < 0 || y < 0)+
+            alert("Error :(");
+        else if ((selection === "/" || selection === "%") && y === 0)
+        {
+            alert("It's over 9000!");
+            console.log("It's over 9000!");
+        }
+        switch(selection)
+        {
+          case ("+"):
+            result = parseInt(x + y);
+          case ("-"):
+            result = parseInt(x - y);
+          case ("*"):
+            result = parseInt(x * y);
+          case ("/"):
+            result = parseInt(x / y);
+          case ("%"):
+            result = parseInt(x % y);
+
+          console.log(result);
+          alert(result);
+        }
+      }
+      setTimeout(() => {
+        alert("Please, use me...");
+      }, 30000);
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="fnumber" pattern="[0-9]+"/>
+      <select id="sel">
+          <option>+</option>
+          <option>-</option>
+          <option>*</option>
+          <option>/</option>
+          <option>%</option>
+      </select>
+      <input type="text" id="snumber" pattern="[0-9]+"/>
+      <input type="submit" value="Try me!" onclick="calculate()"/>
+    </div>
+  </body>
+</html>

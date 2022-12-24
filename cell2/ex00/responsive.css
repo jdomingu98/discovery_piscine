@@ -1,0 +1,25 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  font-size: 10vw;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid black;
+}
+
+.left {
+  width: 50%;
+  background-color: darkseagreen;
+}
+
+.right {
+  width: 50%;
+  background-color: salmon;
+}

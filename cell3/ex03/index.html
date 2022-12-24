@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>TO-DO List</title>
+    <script src="todo.js" defer></script>
+    <style>
+	
+		* {
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+	
+		body {
+			background-color: silver;
+		}
+		
+		h1 {
+			color: #404040;
+			width: 80%;
+			text-align: center;
+		}
+		
+		.new {
+			width: 15%;
+			background-color: grey;
+			color: seashell;
+			border: none;
+			border-radius: 5px;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 0;
+		}
+		
+		.new:active {
+			color: #606060;
+		}
+		
+		button {
+			background-color: transparent;
+			border: none;
+		}
+		
+		button:focus {
+			outline: none;
+		}
+		
+        #ft_list{
+			background-color: seashell;
+			box-shadow: -15px -15px 20px 0px rgba(0, 0, 0, 0.1),
+					15px 15px 20px 0px rgba(0, 0, 0, 0.1);
+			width: 500px;
+			height: calc(100vh - 100px);
+			margin: 50px auto;
+			padding: 4vh 30px;
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+        }
+		
+		#list {
+			width: 70%;
+			height: 320px;
+			list-style: none;
+			overflow: hidden;
+			display: flex;
+			justify-content: flex-end;
+			flex-direction: column-reverse;
+			padding: 0;
+		}
+    </style>
+  </head>
+  <body onload="loadSavedTasks()">
+    <div id="ft_list">
+		<h1>TO DO List</h1>
+        <button class="new" onclick="addItem()">New</button>
+		<div><ul id="list"></ul></div>
+    </div>
+  </body>
+</html>
